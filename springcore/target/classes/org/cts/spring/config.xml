@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean name="emp" class="org.cts.spring.Employee">
+        <property name="id" value="20"/>
+        <property name="name" value="Ajay"/>
+        <property name="deptId">
+            <list>
+                <value>10</value>
+                <value>20</value>
+            </list>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="1" value="First"></entry>
+                <entry key="2" value="Second"></entry>
+                <entry key="3" value="Third"></entry>
+            </map>
+        </property>
+
+
+    </bean>
+
+
+    <bean name="dept" class="org.cts.spring.Department">
+        <property name="list">
+            <ref bean="emp"/>
+        </property>
+
+
+    </bean>
+
+
+</beans>
